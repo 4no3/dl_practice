@@ -33,8 +33,10 @@ def relu_grad(x):
 def softmax(x):     # ソフトマックス関数。分類問題の出力層。
     # 次元について：https://deepage.net/features/numpy-axis.html
     if x.ndim == 2:
-        # 転置しないと行数に応じてうまくいかないことがある
-        # 行列の特性についてもうちょいよく考えたい。
+        # np.max は axis の方向に因らず、1xn の配列になる。
+        # そのため転置しないとブロードキャストできないことがある。
+        # 入力を転置して n をそろえて計算してから再転置する。
+        # np 配列への慣れと勉強が必要。。。
         x = x.T
         x = x - np.max(x, axis=0)
         y = np.exp(x) / np.sum(np.exp(x), axis=0)
