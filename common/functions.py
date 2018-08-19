@@ -56,6 +56,7 @@ def cross_entropy_error(y, t):  # 損失関数：交差エントロピー誤差
         y = y.reshape(1, y.size)
 
     # 教師データが one-hot-vector の場合、正解ラベルのインデックスに変換
+    # このインデックスで、直接次元（？）を指定できる。
     # one-hot でなくても、正解ラベルのインデックスになるのでは？という疑問
     if t.size == y.size:
         t = t.argmax(axis=1)
