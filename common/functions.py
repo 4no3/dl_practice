@@ -51,7 +51,7 @@ def mean_squared_error(y, t):   # 損失関数：二乗和誤差
 
 
 def cross_entropy_error(y, t):  # 損失関数：交差エントロピー誤差
-    if y.dim == 1:  # 1次元の場合、y, t を 1 行 n 列に変換。
+    if y.ndim == 1:  # 1次元の場合、y, t を 1 行 n 列に変換。
         t = t.reshape(1, t.size)
         y = y.reshape(1, y.size)
 

@@ -37,7 +37,7 @@ def numerical_gradient(f, x):
     h = 1e-4
     grad = np.zeros_like(x)
 
-    # イテレータを生成している模様。
+    # イテレータを生成している模様。多次元の入力への対応。
     # 詳しい解説はそのうち学ぼう。
     it = np.nditer(x, flags=["multi_index"], op_flags=["readwrite"])
     while not it.finished:
