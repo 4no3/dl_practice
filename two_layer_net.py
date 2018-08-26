@@ -76,6 +76,8 @@ class TwoLayerNet:
         grads["b1"] = np.sum(da1, axis=0)
 
         return grads
+
+
 """
 # main
 net = TwoLayerNet(input_size=784, hidden_size=100, output_size=10)
